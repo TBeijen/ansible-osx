@@ -1,0 +1,13 @@
+install_homebrew_if_missing: true
+upgrade_homebrew_packages: false
+update_homebrew: true
+
+brew_packages:
+  - name: evernote
+    state: present
+
+brew_taps: []
+#  - name: homebrew/cask-fonts
+#    state: present
+#  - name: hashicorp/tap
+#    state: present
