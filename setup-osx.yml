@@ -4,7 +4,10 @@
   hosts: localhost
   vars:
     brew_cask_packages_install: []
-    brew_cask_packages_uninstall: []
+    brew_cask_packages_uninstall:
+      # community.general.packaging.os.homebrew_cask with state: absent fails on empy list '[]', 
+      # unlike community.general.packaging.os.homebrew...
+      - some_silly_default_that_will_never_exist
     brew_packages_install: []
     brew_packages_uninstall: []
   tasks:
@@ -31,6 +34,10 @@
         brew_packages_uninstall: "{{ brew_packages_uninstall + [item.name] }}"
       loop: "{{ brew_packages }}"
       when: item.state | lower == "absent"
+
+    - name: Print brew_cask_packages_uninstall
+      ansible.builtin.debug:
+        msg: "{{ brew_cask_packages_uninstall }}"
 
     - name: Ensure HomeBrew
       when: ansible_os_family == "Darwin"
@@ -98,13 +105,13 @@
           until: result is successful
           when: homebrew_check.stat.exists
 
-#        - name: Uninstall Homebrew Cask Packages
-#          community.general.packaging.os.homebrew_cask:
-#            name: "{{ brew_cask_packages_uninstall }}"
-#            state: absent
-#          register: result
-#          until: result is successful
-#          when: homebrew_check.stat.exists
+        - name: Uninstall Homebrew Cask Packages
+          community.general.packaging.os.homebrew_cask:
+            name: "{{ brew_cask_packages_uninstall }}"
+            state: absent
+          register: result
+          until: result is successful
+          when: homebrew_check.stat.exists
 
         - name: Installing Homebrew Packages
           community.general.packaging.os.homebrew:
