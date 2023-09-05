@@ -1,9 +1,21 @@
 install_homebrew_if_missing: true
 upgrade_homebrew_packages: false
-update_homebrew: true
+update_homebrew: false
 
-brew_packages:
+brew_packages: []
+
+brew_cask_packages:
+  - name: citrix-workspace
+    state: present
   - name: evernote
+    state: present
+  - name: notion
+    state: present
+  - name: slack
+    state: present
+  - name: tunnelblick
+    state: present
+  - name: visual-studio-code
     state: present
 
 brew_taps: []
