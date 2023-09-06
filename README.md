@@ -36,3 +36,7 @@ ansible-playbook osx.yaml
 
 * https://github.com/mrlesmithjr/developers-workstation-setup/tree/master
 * https://github.com/hnakamur/ansible-role-osx-defaults/blob/master/library/osx_defaults
+
+PGP
+
+* https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e

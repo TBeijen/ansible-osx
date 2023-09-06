@@ -15,25 +15,25 @@
       ansible.builtin.set_fact:
         brew_cask_packages_install: "{{ brew_cask_packages_install + [item.name] }}"
       loop: "{{ brew_cask_packages }}"
-      when: item.state | lower == "present"
+      when: item.state is not defined or item.state | lower == "present"
 
     - name: Define Homebrew Cask Packages to Uninstall
       ansible.builtin.set_fact:
         brew_cask_packages_uninstall: "{{ brew_cask_packages_uninstall + [item.name] }}"
       loop: "{{ brew_cask_packages }}"
-      when: item.state | lower == "absent"
+      when: item.state is defined and item.state | lower == "absent"
 
     - name: Define Homebrew Packages to Install
       ansible.builtin.set_fact:
         brew_packages_install: "{{ brew_packages_install + [item.name] }}"
       loop: "{{ brew_packages }}"
-      when: item.state | lower == "present"
+      when: item.state is not defined or item.state | lower == "present"
 
     - name: Define Homebrew Packages to Uninstall
       ansible.builtin.set_fact:
         brew_packages_uninstall: "{{ brew_packages_uninstall + [item.name] }}"
       loop: "{{ brew_packages }}"
-      when: item.state | lower == "absent"
+      when: item.state is defined and item.state | lower == "absent"
 
     - name: Ensure HomeBrew
       when: ansible_os_family == "Darwin"
