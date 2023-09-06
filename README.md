@@ -27,8 +27,11 @@ export PATH="$HOME/Library/Python/3.9/bin:$PATH"
 
 ```
 git clone git@github.com:TBeijen/ansible-osx.git
-
 cd ansible-osx
+ansible-playbook osx.yaml
 ```
 
  
+## References:
+
+* https://github.com/hnakamur/ansible-role-osx-defaults/blob/master/library/osx_defaults

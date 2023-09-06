@@ -35,10 +35,6 @@
       loop: "{{ brew_packages }}"
       when: item.state | lower == "absent"
 
-    - name: Print brew_cask_packages_uninstall
-      ansible.builtin.debug:
-        msg: "{{ brew_cask_packages_uninstall }}"
-
     - name: Ensure HomeBrew
       when: ansible_os_family == "Darwin"
       block:
