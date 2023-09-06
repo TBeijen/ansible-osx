@@ -31,7 +31,34 @@ cd ansible-osx
 ansible-playbook osx.yaml
 ```
 
- 
+## TODO:
+
+* Configure git using ansible 
+
+```sh
+git config --global commit.gpgsign true
+git config --global user.signingkey 058FED1DA5DDA152
+```
+
+Adding to `~/.gitconfig`:
+
+```ini
+[include]
+	path = ~/dotfiles/common/.gitconfig
+
+[includeIf "gitdir:~/projects/<client>/"]
+	path = ~/.gitconfig-<client>
+```
+
+Example `~/.gitconfig-<client>`:
+
+```ini
+[user]
+	name = Tibo Beijen
+	email = tibo.beijen@<client-domain
+	signingkey = 123FOOBAR
+```
+
 ## References:
 
 * https://github.com/mrlesmithjr/developers-workstation-setup/tree/master
