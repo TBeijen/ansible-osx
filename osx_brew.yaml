@@ -71,21 +71,21 @@
       when: ansible_os_family == "Darwin"
       block:
         - name: Updating Homebrew
-          community.general.packaging.os.homebrew:
+          community.general.homebrew:
             update_homebrew: "{{ update_homebrew }}"
           register: result
           until: result is successful
           when: homebrew_check.stat.exists
 
         - name: Upgrading Homebrew Packages
-          community.general.packaging.os.homebrew:
+          community.general.homebrew:
             upgrade_all: "{{ upgrade_homebrew_packages }}"
           register: result
           until: result is successful
           when: homebrew_check.stat.exists
 
         - name: Installing Homebrew Taps
-          community.general.packaging.os.homebrew_tap:
+          community.general.homebrew_tap:
             name: "{{ item.name }}"
             state: "{{ item.state }}"
           register: result
@@ -94,7 +94,7 @@
           when: homebrew_check.stat.exists
 
         - name: Installing Homebrew Cask Packages
-          community.general.packaging.os.homebrew_cask:
+          community.general.homebrew_cask:
             name: "{{ brew_cask_packages_install }}"
             state: present
           register: result
@@ -102,7 +102,7 @@
           when: homebrew_check.stat.exists
 
         - name: Uninstall Homebrew Cask Packages
-          community.general.packaging.os.homebrew_cask:
+          community.general.homebrew_cask:
             name: "{{ brew_cask_packages_uninstall }}"
             state: absent
           register: result
@@ -110,7 +110,7 @@
           when: homebrew_check.stat.exists
 
         - name: Installing Homebrew Packages
-          community.general.packaging.os.homebrew:
+          community.general.homebrew:
             name: "{{ brew_packages_install }}"
             state: present
           register: result
@@ -118,7 +118,7 @@
           when: homebrew_check.stat.exists
 
         - name: Uninstall Homebrew Packages
-          community.general.packaging.os.homebrew:
+          community.general.homebrew:
             name: "{{ brew_packages_uninstall }}"
             state: absent
           register: result

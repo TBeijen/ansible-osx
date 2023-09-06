@@ -3,8 +3,6 @@
 - name: Set OS defaults
   connection: local
   hosts: localhost
-  vars:
-    screenshotsDirectory: "{{ ansible_facts.env.HOME }}/Documents/Screenshots"
   tasks:
 
     - name: Change file ownership, group and permissions

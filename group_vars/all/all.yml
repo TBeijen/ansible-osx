@@ -1,3 +1,7 @@
+
+screenshotsDirectory: "{{ ansible_facts.env.HOME }}/Documents/Screenshots"
+
+# Brew settings
 install_homebrew_if_missing: true
 upgrade_homebrew_packages: false
 update_homebrew: false
