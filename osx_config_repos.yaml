@@ -1,0 +1,51 @@
+
+- name: Checkout and setup configuration from GIT repositories
+  connection: local
+  hosts: localhost
+  tasks:
+
+    - name: Configure ssh
+      block:
+
+        - name: Checkout ssh config
+          ansible.builtin.git:
+            repo: "{{ sshConfigRepo }}"
+            dest: "{{ ansible_facts.env.HOME }}/ssh_config"
+
+        - name: Check if ssh config is regular file
+          ansible.builtin.stat:
+            path: "{{ ansible_facts.env.HOME }}/.ssh/config"
+          register: ssh_config_stat
+
+        - name: Backup existing ssh config
+          shell: "mv ~/.ssh/config ~/.ssh/config.bak"
+          when: ssh_config_stat.stat.exists == true and ssh_config_stat.stat.isreg == true
+
+        - name: Symlink ssh config
+          ansible.builtin.file:
+            src: "{{ ansible_facts.env.HOME }}/ssh_config/config"
+            dest: "{{ ansible_facts.env.HOME }}/.ssh/config"
+            state: link
+
+    - name: Configure dotfiles and omz
+      block:
+
+        - name: Checkout dotfiles
+          ansible.builtin.git:
+            repo: "{{ dotfilesRepo }}"
+            dest: "{{ ansible_facts.env.HOME }}/dotfiles"
+
+        - name: Check if zshrc is regular file
+          ansible.builtin.stat:
+            path: "{{ ansible_facts.env.HOME }}/.zshrc"
+          register: zshrc_stat
+
+        - name: Backup existing zsrhc
+          shell: "mv ~/.zshrc ~/.zshrc.bak"
+          when: zshrc_stat.stat.exists == true and zshrc_stat.stat.isreg == true
+
+        - name: Symlink zshrc
+          ansible.builtin.file:
+            src: "{{ ansible_facts.env.HOME }}/dotfiles/common/.zshrc"
+            dest: "{{ ansible_facts.env.HOME }}/.zshrc"
+            state: link

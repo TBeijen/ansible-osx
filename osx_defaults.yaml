@@ -5,7 +5,7 @@
   hosts: localhost
   tasks:
 
-    - name: Change file ownership, group and permissions
+    - name: Ensure screenshots dir
       ansible.builtin.file:
         path: "{{ screenshotsDirectory }}"
         state: directory
@@ -35,13 +35,13 @@
         value: true
       notify: Restart Finder
 
-    # - name: Disable DS_Store files
-    #   community.general.osx_defaults:
-    #     domain: com.apple.desktopservices
-    #     key: DSDontWriteNetworkStores
-    #     type: bool
-    #     value: true
-    #   notify: Restart finder
+    - name: Disable DS_Store files
+      community.general.osx_defaults:
+        domain: com.apple.desktopservices
+        key: DSDontWriteNetworkStores
+        type: bool
+        value: true
+      notify: Restart Finder
 
   handlers:
     - name: Restart Finder

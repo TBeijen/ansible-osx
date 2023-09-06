@@ -1,0 +1,20 @@
+---
+- name: Install Oh-My-ZSH
+  connection: local
+  hosts: localhost
+  tasks:
+
+    - name: Ensure OMZ
+      when: ansible_os_family == "Darwin"
+      block:
+
+        - name: Ensuring OMZ Is Installed
+          ansible.builtin.stat:
+            path: "{{ omzPath  }}"
+          register: omz_check
+
+        - name: Installing OMZ
+          ansible.builtin.command: >
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+          when:
+            - not omz_check.stat.exists

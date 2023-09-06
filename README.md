@@ -34,4 +34,5 @@ ansible-playbook osx.yaml
  
 ## References:
 
+* https://github.com/mrlesmithjr/developers-workstation-setup/tree/master
 * https://github.com/hnakamur/ansible-role-osx-defaults/blob/master/library/osx_defaults
