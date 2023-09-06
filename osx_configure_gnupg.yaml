@@ -1,0 +1,45 @@
+---
+# Based on: https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
+- name: Set OS defaults
+  connection: local
+  hosts: localhost
+  tasks:
+
+    - name: Ensure gnupg
+      ansible.builtin.file:
+        path: "{{ ansible_facts.env.HOME }}/.gnupg"
+        state: directory
+        mode: '0700'
+      notify: Restart gpg
+
+    - name: Write gpg-agent.conf
+      template:
+        src: gpg-agent.conf.j2
+        dest: "{{ ansible_facts.env.HOME }}/.gnupg/gpg-agent.conf"
+        mode: 0600
+      notify: Restart gpg
+
+    - name: Write gpg.conf
+      template:
+        src: gpg.conf.j2
+        dest: "{{ ansible_facts.env.HOME }}/.gnupg/gpg.conf"
+        mode: 0600
+      notify: Restart gpg
+
+  handlers:
+    - name: Restart gpg
+      ignore_errors: yes
+      command: killall gpg-agent
+
+
+
+
+
+
+# - name: Add credentials
+#   template:
+#     src: credentials.j2
+#     dest: "{% if item.user == 'root' %}/root/.aws/credentials{% else %}/data/home/{{ item.user }}/.aws/credentials{% endif %}"
+#     owner: "{{ item.user }}"
+#     mode: 0600
+#   with_items: "{{ aws_cli_credentials }}"
