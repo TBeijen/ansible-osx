@@ -49,3 +49,9 @@
             src: "{{ ansible_facts.env.HOME }}/dotfiles/common/.zshrc"
             dest: "{{ ansible_facts.env.HOME }}/.zshrc"
             state: link
+
+        - name: Symlink autoenv to sourced files
+          ansible.builtin.file:
+            src: "{{ ansible_facts.env.HOMEBREW_PREFIX }}/opt/autoenv/activate.sh"
+            dest: "{{ ansible_facts.env.HOME }}/dotfiles/zsh/sourced/activate.sh"
+            state: link

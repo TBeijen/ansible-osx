@@ -13,6 +13,7 @@ brew_cask_packages:
   - name: citrix-workspace
   - name: docker
   - name: evernote
+  - name: iterm2
   - name: notion
   - name: slack
   - name: spotify
@@ -22,13 +23,17 @@ brew_cask_packages:
   #   state: absent
 
 brew_packages:
+  - name: autoenv
   - name: awscli
+  - name: Azure/kubelogin/kubelogin
   - name: azure-cli
-  - name: jq
   - name: gnupg
   - name: gpg2
+  - name: jq
+  - name: kubectl
   - name: pinentry-mac
   - name: yq
+  - name: tfenv
 
 brew_taps: []
 #  - name: homebrew/cask-fonts
