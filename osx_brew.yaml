@@ -124,3 +124,12 @@
           register: result
           until: result is successful
           when: homebrew_check.stat.exists
+
+    - name: Misc finishing steps
+      block:
+        - name: Symlink zshrc
+          ansible.builtin.file:
+            src: "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl"
+            dest: "{{ ansible_facts.env.HOMEBREW_PREFIX }}/bin/subl"
+            state: link
+          when: '"iterm2" in brew_cask_packages_install'

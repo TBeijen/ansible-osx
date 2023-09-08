@@ -59,6 +59,8 @@ Example `~/.gitconfig-<client>`:
 	signingkey = 123FOOBAR
 ```
 
+
+
 ## References:
 
 * https://github.com/mrlesmithjr/developers-workstation-setup/tree/master
@@ -67,3 +69,7 @@ Example `~/.gitconfig-<client>`:
 PGP
 
 * https://gist.github.com/troyfontaine/18c9146295168ee9ca2b30c00bd1b41e
+
+Minikube
+
+* https://devopscube.com/minikube-mac/#:~:text=This%20blog%20contains%20the%20guide,based%20systems%20without%20any%20issues.

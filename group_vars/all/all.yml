@@ -15,10 +15,13 @@ brew_cask_packages:
   - name: evernote
   - name: iterm2
   - name: notion
+  - name: signal
   - name: slack
   - name: spotify
+  - name: sublime-text
   - name: tunnelblick
   - name: visual-studio-code
+  - name: whatsapp
   # - name: app-wanting-to-uninstall
   #   state: absent
 
@@ -31,9 +34,12 @@ brew_packages:
   - name: gpg2
   - name: jq
   - name: kubectl
+  - name: minikube
   - name: pinentry-mac
-  - name: yq
+  - name: qemu
+  - name: socket_vmnet
   - name: tfenv
+  - name: yq
 
 brew_taps: []
 #  - name: homebrew/cask-fonts
