@@ -3,6 +3,7 @@ screenshotsDirectory: "{{ ansible_facts.env.HOME }}/Documents/Screenshots"
 omzPath: "{{ ansible_facts.env.HOME }}/.oh-my-zsh"
 dotfilesRepo: "git@github.com:TBeijen/dotfiles.git"
 sshConfigRepo: "git@codeberg.org:TBeijen/ssh_config.git"
+workspacesRepo: "git@codeberg.org:TBeijen/workspaces.git"
 
 # Brew settings
 install_homebrew_if_missing: true

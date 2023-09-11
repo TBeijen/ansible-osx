@@ -27,6 +27,14 @@
             dest: "{{ ansible_facts.env.HOME }}/.ssh/config"
             state: link
 
+    - name: Configure workspaces
+      block:
+
+        - name: Checkout workspaces
+          ansible.builtin.git:
+            repo: "{{ workspacesRepo }}"
+            dest: "{{ ansible_facts.env.HOME }}/workspaces"
+
     - name: Configure dotfiles and omz
       block:
 
