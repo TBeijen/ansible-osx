@@ -1,0 +1,18 @@
+# See: https://docs.ansible.com/ansible/latest/collections/community/general/github_release_module.html
+- name: Download binaries from github
+  connection: local
+  hosts: localhost
+  tasks:
+
+    - name: Get gogs latest tag 
+      community.general.github_release:
+        user: gogs
+        repo: gogs
+        action: latest_release
+      register: gogs_latest 
+
+    - name: Grab gogs latest binaries 
+      unarchive: 
+        src: "https://github.com/gogs/gogs/releases/download/{{ gogs_latest['tag'] }}/gogs_{{ gogs_latest['tag'] | regex_replace('^v','') }}_linux_amd64.zip"
+        dest: /usr/local/bin
+        remote_src: true 

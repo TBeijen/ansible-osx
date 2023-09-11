@@ -36,12 +36,17 @@ brew_packages:
   - name: azure-cli
   - name: gnupg
   - name: gpg2
+  - name: helm
   - name: jq
+  - name: k6
   - name: kubectl
   - name: minikube
   - name: pinentry-mac
+  - name: pyenv
+  - name: pyenv-virtualenv
   - name: qemu
   - name: socket_vmnet
+  - name: stern
   - name: tfenv
   - name: wget
   - name: yh
