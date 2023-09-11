@@ -59,7 +59,7 @@ Example `~/.gitconfig-<client>`:
 	signingkey = 123FOOBAR
 ```
 
-
+Figure out why appstore tailscale works and brew tailscale 'hangs'
 
 ## References:
 

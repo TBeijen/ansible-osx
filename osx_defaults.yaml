@@ -19,6 +19,14 @@
         value: "{{ screenshotsDirectory }}"
       notify: Restart SystemUIServer
 
+    - name: Set screenshot format
+      community.general.osx_defaults:
+        domain: com.apple.screencapture
+        key: type
+        type: string
+        value: PNG
+      notify: Restart SystemUIServer
+
     - name: Show hidden files
       community.general.osx_defaults:
         domain: com.apple.finder
@@ -47,5 +55,5 @@
     - name: Restart Finder
       command: killall Finder
 
-    - name: Restart SystemUIFinder
-      command: killall SystemUIFinder
+    - name: Restart SystemUIServer
+      command: killall SystemUIServer
