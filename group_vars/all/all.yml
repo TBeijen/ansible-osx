@@ -41,6 +41,7 @@ brew_packages:
   - name: k6
   - name: kubectl
   - name: minikube
+  - name: nvm
   - name: pinentry-mac
   - name: pyenv
   - name: pyenv-virtualenv

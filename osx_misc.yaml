@@ -1,0 +1,12 @@
+---
+- name: Misc setup actions
+  connection: local
+  hosts: localhost
+  tasks:
+
+    - name: Ensure nvm dir
+      ansible.builtin.file:
+        path: "{{ ansible_facts.env.HOME }}/.nvm"
+        state: directory
+        mode: '0755'
+
