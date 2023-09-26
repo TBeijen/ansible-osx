@@ -26,6 +26,7 @@ brew_cask_packages:
   - name: tunnelblick
   - name: visual-studio-code
   - name: whatsapp
+  - name: wkhtmltopdf
   # - name: app-wanting-to-uninstall
   #   state: absent
 
