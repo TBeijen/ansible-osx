@@ -14,6 +14,7 @@ brew_cask_packages:
   - name: citrix-workspace
   - name: docker
   - name: evernote
+  - name: gimp
   - name: iterm2
   - name: notion
   - name: signal
