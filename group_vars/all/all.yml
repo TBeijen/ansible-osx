@@ -36,6 +36,7 @@ brew_packages:
   - name: awscli
   - name: Azure/kubelogin/kubelogin
   - name: azure-cli
+  - name: curl
   - name: gnupg
   - name: gpg2
   - name: helm
@@ -50,6 +51,7 @@ brew_packages:
   - name: qemu
   - name: socket_vmnet
   - name: stern
+  - name: testssl
   - name: tfenv
   - name: wget
   - name: yh
