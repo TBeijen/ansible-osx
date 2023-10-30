@@ -36,6 +36,7 @@ brew_packages:
   - name: awscli
   - name: Azure/kubelogin/kubelogin
   - name: azure-cli
+  - name: cloudflare/cloudflare/cloudflared
   - name: curl
   - name: gnupg
   - name: gpg2
@@ -53,6 +54,7 @@ brew_packages:
   - name: stern
   - name: testssl
   - name: tfenv
+  - name: tree
   - name: wget
   - name: yh
   - name: yq
