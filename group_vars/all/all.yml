@@ -38,6 +38,7 @@ brew_packages:
   - name: azure-cli
   - name: cloudflare/cloudflare/cloudflared
   - name: curl
+  - name: gh
   - name: gnupg
   - name: gpg2
   - name: helm
