@@ -13,12 +13,15 @@ update_homebrew: false
 brew_cask_packages:
   - name: citrix-workspace
   - name: docker
+  - name: drawio
   - name: evernote
   - name: gimp
   - name: iterm2
+  - name: languagetool
   - name: notion
   - name: signal
   - name: slack
+  - name: sourcetree
   - name: spotify
   - name: sublime-text
     # Hangs on start, installed tailscale from app store which works :/
@@ -34,12 +37,15 @@ brew_cask_packages:
 brew_packages:
   - name: autoenv
   - name: awscli
+  - name: azcopy
   - name: Azure/kubelogin/kubelogin
   - name: azure-cli
   - name: cloudflare/cloudflare/cloudflared
+  - name: colima
   - name: curl
   - name: gh
   - name: gnupg
+  - name: go
   - name: gpg2
   - name: helm
   - name: jq
@@ -47,6 +53,7 @@ brew_packages:
   - name: kubectl
   - name: minikube
   - name: nvm
+  - name: opa
   - name: pinentry-mac
   - name: pyenv
   - name: pyenv-virtualenv
