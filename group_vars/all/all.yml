@@ -15,6 +15,7 @@ brew_cask_packages:
   - name: docker
   - name: drawio
   - name: evernote
+  - name: firefox
   - name: gimp
   - name: iterm2
   - name: languagetool
@@ -30,6 +31,7 @@ brew_cask_packages:
   - name: tunnelblick
   - name: visual-studio-code
   - name: whatsapp
+  - name: wireshark
   - name: wkhtmltopdf
   # - name: app-wanting-to-uninstall
   #   state: absent
@@ -43,9 +45,12 @@ brew_packages:
   - name: cloudflare/cloudflare/cloudflared
   - name: colima
   - name: curl
+  - name: crane
+  - name: direnv
   - name: gh
   - name: gnupg
   - name: go
+  - name: go-task
   - name: gpg2
   - name: helm
   - name: jq
