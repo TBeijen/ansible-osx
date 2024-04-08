@@ -19,6 +19,7 @@ brew_cask_packages:
   - name: gimp
   - name: iterm2
   - name: languagetool
+  - name: microsoft-teams
   - name: notion
   - name: signal
   - name: slack
@@ -33,6 +34,7 @@ brew_cask_packages:
   - name: whatsapp
   - name: wireshark
   - name: wkhtmltopdf
+  - name: yed
   # - name: app-wanting-to-uninstall
   #   state: absent
 
@@ -59,6 +61,7 @@ brew_packages:
   - name: minikube
   - name: nvm
   - name: opa
+  - name: opentofu
   - name: pinentry-mac
   - name: pyenv
   - name: pyenv-virtualenv
@@ -69,6 +72,8 @@ brew_packages:
   - name: tfenv
   - name: tree
   - name: wget
+  - name: yamllint
+    state: absent
   - name: yh
   - name: yq
 
