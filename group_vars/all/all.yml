@@ -12,6 +12,7 @@ update_homebrew: false
 
 brew_cask_packages:
   - name: citrix-workspace
+  - name: db-browser-for-sqlite
   - name: docker
   - name: drawio
   - name: evernote
@@ -46,6 +47,7 @@ brew_packages:
   - name: azure-cli
   - name: cloudflare/cloudflare/cloudflared
   - name: colima
+  - name: docker-compose
   - name: curl
   - name: crane
   - name: direnv
@@ -69,6 +71,7 @@ brew_packages:
   - name: qemu
   - name: socket_vmnet
   - name: stern
+  - name: sqlite
   - name: testssl
   - name: tfenv
   - name: tree
