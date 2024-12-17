@@ -30,9 +30,11 @@ brew_cask_packages:
     # Hangs on start, installed tailscale from app store which works :/
   - name: tailscale
     state: absent
+  - name: teamviewer
   - name: tunnelblick
   - name: visual-studio-code
   - name: whatsapp
+  - name: windows-app
   - name: wireshark
   - name: wkhtmltopdf
   - name: yed
@@ -69,12 +71,15 @@ brew_packages:
   - name: pyenv
   - name: pyenv-virtualenv
   - name: qemu
+  - name: siderolabs/tap/talosctl
   - name: socket_vmnet
   - name: stern
   - name: sqlite
   - name: testssl
   - name: tfenv
   - name: tree
+  - name: trivy
+  - name: watch
   - name: wget
   - name: yamllint
     state: absent

@@ -35,6 +35,14 @@
         value: true
       notify: Restart Finder
 
+    - name: Show hidden files in dialogs
+      community.general.osx_defaults:
+        # NSGlobalDomain is the same as -g, e.g. 'defaults read -g' is 'defaults read NSGlobalDomain'
+        domain: NSGlobalDomain
+        key: AppleShowAllFiles
+        type: bool
+        value: true
+
     - name: Show path bar
       community.general.osx_defaults:
         domain: com.apple.finder
