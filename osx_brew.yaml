@@ -93,36 +93,72 @@
           loop: "{{ brew_taps }}"
           when: homebrew_check.stat.exists
 
+        # - name: Installing Homebrew Cask Packages
+        #   community.general.homebrew_cask:
+        #     name: "{{ brew_cask_packages_install }}"
+        #     state: present
+        #   register: result
+        #   until: result is successful
+        #   when: homebrew_check.stat.exists
+
         - name: Installing Homebrew Cask Packages
           community.general.homebrew_cask:
-            name: "{{ brew_cask_packages_install }}"
+            name: "{{ item }}"
             state: present
           register: result
           until: result is successful
+          loop: "{{ brew_cask_packages_install }}"
           when: homebrew_check.stat.exists
+
+        # - name: Uninstall Homebrew Cask Packages
+        #   community.general.homebrew_cask:
+        #     name: "{{ brew_cask_packages_uninstall }}"
+        #     state: absent
+        #   register: result
+        #   until: result is successful
+        #   when: homebrew_check.stat.exists
 
         - name: Uninstall Homebrew Cask Packages
           community.general.homebrew_cask:
-            name: "{{ brew_cask_packages_uninstall }}"
+            name: "{{ item }}"
             state: absent
           register: result
           until: result is successful
+          loop: "{{ brew_cask_packages_uninstall }}"
           when: homebrew_check.stat.exists
+
+        # - name: Installing Homebrew Packages
+        #   community.general.homebrew:
+        #     name: "{{ brew_packages_install }}"
+        #     state: present
+        #   register: result
+        #   until: result is successful
+        #   when: homebrew_check.stat.exists
 
         - name: Installing Homebrew Packages
           community.general.homebrew:
-            name: "{{ brew_packages_install }}"
+            name: "{{ item }}"
             state: present
           register: result
           until: result is successful
+          loop: "{{ brew_packages_install }}"
           when: homebrew_check.stat.exists
+
+        # - name: Uninstall Homebrew Packages
+        #   community.general.homebrew:
+        #     name: "{{ brew_packages_uninstall }}"
+        #     state: absent
+        #   register: result
+        #   until: result is successful
+        #   when: homebrew_check.stat.exists
 
         - name: Uninstall Homebrew Packages
           community.general.homebrew:
-            name: "{{ brew_packages_uninstall }}"
+            name: "{{ item }}"
             state: absent
           register: result
           until: result is successful
+          loop: "{{ brew_packages_uninstall }}"
           when: homebrew_check.stat.exists
 
     - name: Misc finishing steps
