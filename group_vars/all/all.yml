@@ -58,6 +58,8 @@ brew_packages:
   - name: go
   - name: go-task
   - name: gpg2
+  - name: harlequin
+  - name: hcloud
   - name: helm
   - name: jq
   - name: k3d
@@ -67,6 +69,7 @@ brew_packages:
   - name: nvm
   - name: opa
   - name: opentofu
+  - name: pandoc
   - name: pinentry-mac
   - name: pyenv
   - name: pyenv-virtualenv
@@ -75,6 +78,7 @@ brew_packages:
   - name: socket_vmnet
   - name: stern
   - name: sqlite
+  - name: talosctl
   - name: testssl
   - name: tfenv
   - name: tree
