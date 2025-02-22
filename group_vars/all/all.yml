@@ -42,6 +42,7 @@ brew_cask_packages:
   #   state: absent
 
 brew_packages:
+  - name: argocd
   - name: autoenv
   - name: awscli
   - name: azcopy
@@ -53,6 +54,7 @@ brew_packages:
   - name: curl
   - name: crane
   - name: direnv
+  - name: dnsmasq
   - name: gh
   - name: gnupg
   - name: go
@@ -64,10 +66,12 @@ brew_packages:
   - name: jq
   - name: k3d
   - name: k6
+  - name: k9s
   - name: kubectl
   - name: minikube
   - name: nvm
   - name: opa
+  - name: openfga/tap/fga
   - name: opentofu
   - name: pandoc
   - name: pinentry-mac
