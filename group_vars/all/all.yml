@@ -22,6 +22,7 @@ brew_cask_packages:
   - name: languagetool
   - name: microsoft-teams
   - name: notion
+  - name: pgadmin4
   - name: signal
   - name: slack
   - name: sourcetree
@@ -31,6 +32,7 @@ brew_cask_packages:
   - name: tailscale
     state: absent
   - name: teamviewer
+  - name: temurin
   - name: tunnelblick
   - name: visual-studio-code
   - name: whatsapp
@@ -43,6 +45,7 @@ brew_cask_packages:
 
 brew_packages:
   - name: argocd
+  - name: argoproj/tap/kubectl-argo-rollouts
   - name: autoenv
   - name: awscli
   - name: azcopy
@@ -55,14 +58,17 @@ brew_packages:
   - name: crane
   - name: direnv
   - name: dnsmasq
+  - name: font-meslo-lg-nerd-font
   - name: gh
   - name: gnupg
   - name: go
   - name: go-task
   - name: gpg2
   - name: harlequin
+  - name: hashicorp/tap/packer
   - name: hcloud
   - name: helm
+  - name: jandedobbeleer/oh-my-posh/oh-my-posh
   - name: jq
   - name: k3d
   - name: k6
@@ -79,6 +85,7 @@ brew_packages:
   - name: pyenv-virtualenv
   - name: qemu
   - name: siderolabs/tap/talosctl
+  - name: skopeo
   - name: socket_vmnet
   - name: stern
   - name: sqlite
